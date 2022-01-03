@@ -35,7 +35,7 @@ node {
                         sh "git config user.email raj@cloudwithraj.com"
                         sh "git config user.name RajSaha"
                         //sh "git switch master"
-                        sh "echo 'testing' > test.txt"
+                        sh "sed -i 's+raj80dockerid/test.*+raj80dockerid/test:${env.BUILD_NUMBER}+g' deployment.yaml"
                         sh "git add ."
                         sh "git commit -m 'Triggered Build: ${env.BUILD_NUMBER}'"
                         sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/docker.git HEAD:master"
