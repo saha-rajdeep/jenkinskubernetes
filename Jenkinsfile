@@ -37,7 +37,7 @@ node {
                         //sh "git switch master"
                         sh "git clone https://github.com/saha-rajdeep/kubernetesmanifest.git"
                         sh "ls"
-                        sh "cd ./kubernetesmanifest"
+                        sh "cd kubernetesmanifest"
                         sh "cat deployment.yaml"
                         sh "sed -i 's+raj80dockerid/test.*+raj80dockerid/test:${env.BUILD_NUMBER}+g' deployment.yaml"
                         sh "cat deployment.yaml"
