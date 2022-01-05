@@ -35,6 +35,8 @@ node {
                         sh "git config user.email raj@cloudwithraj.com"
                         sh "git config user.name RajSaha"
                         //sh "git switch master"
+                        sh "git clone https://github.com/saha-rajdeep/kubernetesmanifest.git"
+                        sh "cd ./kubernetesmanifest"
                         sh "cat deployment.yaml"
                         sh "sed -i 's+raj80dockerid/test.*+raj80dockerid/test:${env.BUILD_NUMBER}+g' deployment.yaml"
                         sh "cat deployment.yaml"
